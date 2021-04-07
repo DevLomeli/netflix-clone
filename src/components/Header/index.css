@@ -31,12 +31,20 @@
   height: 100%;
 }
 
-.header__nav {
-}
-
 .header__avatar {
   position: fixed;
   right: 20px;
-  width: 30px;
-  border-radius: 8px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.header__avatar:hover {
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
+
+.header__signinButton {
+  position: fixed;
+  right: 20px;
+  padding: 10px 20px;
 }

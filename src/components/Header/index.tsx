@@ -3,7 +3,13 @@ import "./index.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Header = () => {
+import { useSelector } from "react-redux";
+import { selectAuth } from "../../redux/reducers/authReducer";
+
+import { IHeaderProps } from "../../interfaces";
+
+const Header: React.FC<IHeaderProps> = ({ setSignIn }) => {
+  const user: object | null = useSelector(selectAuth);
   const [showHeader, setShowHeader] = useState(false);
 
   const transitionNavBar = () => {
@@ -21,6 +27,29 @@ const Header = () => {
     };
   }, []);
 
+  const renderAction = () => {
+    if (!user) {
+      return (
+        <Link
+          to="/login"
+          className="header__signinButton button button--primary"
+          onClick={setSignIn}
+        >
+          Sign in
+        </Link>
+      );
+    }
+    return (
+      <Link to="/profile">
+        <img
+          className="header__avatar"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="avatar"
+        />
+      </Link>
+    );
+  };
+
   return (
     <header className={`header ${showHeader && "header--black"}`}>
       <div className="header__content">
@@ -30,15 +59,7 @@ const Header = () => {
             alt="netflix logo"
           />
         </Link>
-        <nav className="header__nav"></nav>
-
-        <Link to="/profile">
-          <img
-            className="header__avatar"
-            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-            alt="avatar"
-          />
-        </Link>
+        {renderAction()}
       </div>
     </header>
   );

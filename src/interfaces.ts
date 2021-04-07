@@ -27,3 +27,7 @@ export interface IRowProps {
     fetchUrl: string;
     isLargeRow?: boolean;
 }
+
+export interface IHeaderProps {
+    setSignIn?: () => void
+}
