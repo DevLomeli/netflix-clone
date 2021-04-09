@@ -1,11 +1,8 @@
 import "./index.css";
-
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectAuth } from "../../redux/reducers/authReducer";
-
 import { IHeaderProps } from "../../interfaces";
 
 const Header: React.FC<IHeaderProps> = ({ setSignIn }) => {
@@ -30,13 +27,12 @@ const Header: React.FC<IHeaderProps> = ({ setSignIn }) => {
   const renderAction = () => {
     if (!user) {
       return (
-        <Link
-          to="/login"
+        <button
           className="header__signinButton button button--primary"
           onClick={setSignIn}
         >
           Sign in
-        </Link>
+        </button>
       );
     }
     return (

@@ -2,6 +2,7 @@ import "./index.css";
 import { useState } from "react";
 import Header from "../../components/Header";
 import LoginForm from "../../components/LoginForm";
+
 const LoginPage = () => {
   const [signIn, setSignIn] = useState<boolean>(false);
 
@@ -19,7 +20,10 @@ const LoginPage = () => {
         <div className="login__input">
           <form>
             <input type="email" placeholder="Email Address" />
-            <button className="login__button button button--primary">
+            <button
+              onClick={() => setSignIn(true)}
+              className="login__button button button--primary"
+            >
               get started
             </button>
           </form>

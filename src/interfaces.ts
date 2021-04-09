@@ -1,7 +1,13 @@
+interface GenMovie {
+    id: number;
+    name: string;
+}
+
 export interface IMovie {
     backdrop_path: string;
     first_air_date: string;
-    genre_ids: Array<number>;
+    genres: Array<GenMovie>;
+    genre_ids: Array<GenMovie>;
     id: number;
     title?: string;
     name: string;
@@ -13,7 +19,10 @@ export interface IMovie {
     poster_path: string;
     vote_average: number;
     vote_count: number;
+    release_date: string;
+    media_type: string;
 }
+
 
 export interface IMovies {
     page: number;
@@ -26,8 +35,19 @@ export interface IRowProps {
     title: string;
     fetchUrl: string;
     isLargeRow?: boolean;
+    tv?: boolean;
 }
 
 export interface IHeaderProps {
     setSignIn?: () => void
+}
+
+interface IMovieImageBackdrop {
+    file_path: string;
+}
+
+export interface IMovieImages {
+    backdrops: Array<IMovieImageBackdrop>;
+    id: number;
+    posters: Array<object>;
 }

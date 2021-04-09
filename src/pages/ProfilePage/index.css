@@ -4,8 +4,76 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #fff;
+}
+
+.profile__content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 800px;
+}
+
+.profile__content > h1 {
+  font-size: 60px;
+  font-weight: 400;
+  border-bottom: 1px solid #282c2d;
+  margin-bottom: 20px;
+}
+
+.profile__info {
+  display: flex;
+}
+
+.profile__info > img {
+  border-radius: 5%;
+  height: 100px;
+}
+
+.profile__details {
+  color: #fff;
+  margin-left: 25px;
+  flex: 1;
+}
+
+.profile__details > h2 {
+  background-color: gray;
+  padding: 15px;
+  font-size: 15px;
+  padding-left: 20px;
+}
+
+.profile__plans {
+  margin-top: 20px;
+}
+
+.profile__plans > h3 {
+  border-bottom: 1px solid #282c2d;
+  padding-bottom: 10px;
+}
+
+.profile__plans > h4 {
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.profile__plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 10px;
+}
+
+.profile__plan > p {
+  font-weight: 700;
+}
+
+.profile__plan > button {
+  padding: 10px 20px;
 }
 
 .profile__button {
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 10px 20px;
 }

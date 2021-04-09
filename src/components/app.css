@@ -10,9 +10,19 @@
   outline: none;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button--primary {
-  background-color: #e50914;
+  background: rgb(212, 44, 44);
+  background: linear-gradient(
+    90deg,
+    rgba(212, 44, 44, 1) 0%,
+    rgba(125, 4, 4, 1) 100%
+  );
   color: #fff;
+}
+
+.button--primary:hover {
+  filter: brightness(0.9);
 }
