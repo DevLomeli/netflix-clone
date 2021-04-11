@@ -1,5 +1,5 @@
 export interface User {
-    uid: string | null;
+    uid: string | undefined;
     email: string | null;
 }
 

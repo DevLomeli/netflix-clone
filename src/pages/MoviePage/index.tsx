@@ -68,23 +68,26 @@ const MoviePage: React.FC<
           }")`,
         }}
       >
-        <div className="moviePage__info">
-          <p className="moviePage__releaseDate">
-            {movie?.release_date || movie?.first_air_date}
-          </p>
-          <h1 className="moviePage__title">{movie?.title || movie?.name}</h1>
-          <div className="moviePage__genWrapper">{renderGenMovie()}</div>
-          <h2 className="moviePage__description">
-            {truncate(movie?.overview || "", 210)}
-          </h2>
-          <button className="moviePage__button button">Watch Trailer</button>
-        </div>
+        {movie ? (
+          <div className="moviePage__info">
+            <p className="moviePage__releaseDate">
+              {movie?.release_date || movie?.first_air_date}
+            </p>
+            <h1 className="moviePage__title">{movie?.title || movie?.name}</h1>
+            <div className="moviePage__genWrapper">{renderGenMovie()}</div>
+            <h2 className="moviePage__description">
+              {truncate(movie?.overview || "", 210)}
+            </h2>
+            <button className="moviePage__button button">Watch Trailer</button>
+          </div>
+        ) : null}
         <div className="moviePage__overlay"></div>
       </section>
       <section className="moviePage__gallery">
         <div className="moviePage__galleryRow">
-          {images?.backdrops.map((image) => (
+          {images?.backdrops.map((image, index) => (
             <img
+              key={index}
               alt=""
               src={`https://image.tmdb.org/t/p/original/${image.file_path}`}
             />
