@@ -6,7 +6,6 @@
 .row__posters {
   position: relative;
   display: flex;
-  overflow-y: hidden;
   overflow-x: scroll;
   transition: transform 250ms;
 }
@@ -53,6 +52,7 @@
   flex-direction: row;
   overflow-y: hidden;
   overflow-x: scroll;
+  scroll-behavior: smooth;
 }
 
 .row__postersContainer::-webkit-scrollbar {
